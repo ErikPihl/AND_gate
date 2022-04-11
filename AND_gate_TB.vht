@@ -16,15 +16,15 @@
 --   40      1  1  1    
 ----------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
-library IEEE; 					  -- Inkluderar biblioteket IEEE.
-use IEEE.std_logic_1164.all; -- Inkluderar specifikt paketet std_logic_1164 från biblioteket IEEE.
+library IEEE; 			-- Inkluderar biblioteket IEEE.
+use IEEE.std_logic_1164.all; 	-- Inkluderar specifikt paketet std_logic_1164 från biblioteket IEEE.
 
 entity AND_gate_TB is
 end entity; 
 
 architecture Testbench of AND_gate_TB is
 
-signal A, B, X : std_logic; -- Simulerar in- och utsignaler med samma namn i toppmodulen.
+signal A, B, X : std_logic; 	-- Simulerar in- och utsignaler med samma namn i toppmodulen.
 
 ---------------------------------------------------------------------------------------------------------
 -- Komponenten AND_gate deklareras för att kunna skapa en instans / ett objekt av toppmodulen för
@@ -66,11 +66,11 @@ begin
 	-------------------------------------------------------------------------------------
 	A_PROCESS: process is
 	begin
-		A <= '0'; 					-- Tilldelar låg signal till A.
-		wait for 20 ns; 			-- Fördröjer aktuellt tillstånd i 20 ns.
-		A <= '1'; 					-- Tilldelar hög signal till A.
+		A <= '0'; 			-- Tilldelar låg signal till A.
+		wait for 20 ns; 		-- Fördröjer aktuellt tillstånd i 20 ns.
+		A <= '1'; 			-- Tilldelar hög signal till A.
 		wait for 20 ns;			-- Fördröjer aktuellt tillstånd i 20 ns.
-		wait; 						-- Håller tillståndet resten av simuleringen.
+		wait; 				-- Håller tillståndet resten av simuleringen.
 	end process;
 	
 	-------------------------------------------------------------------------------------
@@ -80,13 +80,13 @@ begin
 	-------------------------------------------------------------------------------------
 	B_PROCESS: process is
 	begin
-		for i in 0 to 1 loop 	-- Itererar två varv.
-			B <= '0'; 				-- Tilldelar låg signal till B.
-			wait for 10 ns; 		-- Fördröjer aktuellt tillstånd i 10 ns.
-			B <= '1'; 				-- Tilldelar hög signal till B.
-			wait for 10 ns; 		-- Fördröjer aktuellt tillstånd i 10 ns.
-		end loop; 					-- Här slutar for-loopen.
-		wait; 						-- Håller tillståndet resten av simuleringen.
+		for i in 0 to 1 loop 		-- Itererar två varv.
+			B <= '0'; 		-- Tilldelar låg signal till B.
+			wait for 10 ns; 	-- Fördröjer aktuellt tillstånd i 10 ns.
+			B <= '1'; 		-- Tilldelar hög signal till B.
+			wait for 10 ns; 	-- Fördröjer aktuellt tillstånd i 10 ns.
+		end loop; 			-- Här slutar for-loopen.
+		wait; 				-- Håller tillståndet resten av simuleringen.
 	end process;
 
 end architecture;
